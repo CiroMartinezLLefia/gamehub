@@ -1,182 +1,187 @@
-/* === FUENTES Y RESET === */
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Roboto:wght@300;400&display=swap');
+/* === ESTILO CUTRE 2000 PARA JUEGO DE CELDAS === */
 
+/* FUENTES Y RESET */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: url('https://cur.cursors-4u.net/smilies/smi-3/smi229.cur'), auto;
 }
 
-html, body {
-    height: 100%;
-    font-family: 'Roboto', sans-serif;
-    background: radial-gradient(circle at top, #111 0%, #000 100%);
-    color: #f0f0f0;
-    overflow-x: hidden;
+body {
+  font-family: 'Comic Sans MS', 'Papyrus', cursive;
+  background: url('https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExYTZlb3pnNng0bm51czF2OGJja3FmZmxqOWtyYTNhZjgyamFndW51biZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/FlodpfQUBSp20/giphy.gif') repeat;
+  color: #00ff00;
+  text-shadow: 2px 2px 6px #ff00ff;
+  animation: flashBg 4s infinite alternate;
+  overflow-x: hidden;
 }
 
-/* === HEADER === */
+/* === CABECERA === */
 header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: linear-gradient(90deg, #0ff, #0f0, #00f);
-    background-size: 300% 300%;
-    animation: gradientMove 8s ease infinite;
-    text-align: center;
-    padding: 20px 0;
-    z-index: 1000;
-    box-shadow: 0 0 25px #0ff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(45deg, red, yellow, lime, cyan, blue, magenta);
+  background-size: 600% 600%;
+  animation: moveRainbow 6s linear infinite;
+  padding: 25px 0;
+  border-bottom: 6px groove magenta;
+  box-shadow: 0 0 30px yellow inset;
+  z-index: 1000;
 }
 
 header h1 {
-    font-family: 'Orbitron', sans-serif;
-    text-transform: uppercase;
-    font-size: 2rem;
-    color: #000;
-    text-shadow: 0 0 15px #0ff, 0 0 25px #0f0;
-}
-
-/* === FOOTER === */
-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(0, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    text-align: center;
-    padding: 10px 0;
-    font-size: 0.9rem;
-    border-top: 1px solid rgba(0, 255, 255, 0.5);
-    color: #0ff;
-}
-
-footer a {
-    font-size: 1.5rem;
-    color: #0ff;
-    text-shadow: 0 0 10px #0ff;
-}
-
-footer:hover {
-    height: 4.5rem;
+  font-size: 3rem;
+  color: #ff0;
+  text-shadow: 3px 3px 6px #f00, 0 0 20px #0ff;
+  text-transform: uppercase;
+  animation: blinkText 0.8s infinite;
 }
 
 /* === MAIN === */
 main {
-    margin-top: 120px;
-    margin-bottom: 80px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 25px;
+  margin-top: 180px;
+  margin-bottom: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  text-align: center;
+  background: rgba(255, 255, 0, 0.2);
+  border: 5px ridge #ff00ff;
+  box-shadow: 0 0 30px #0ff inset, 0 0 20px #f0f;
+  padding: 30px;
+  width: 90%;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* === MATRIZ === */
 #matriz {
-    margin: 20px 0;
-    padding: 20px;
-    border: 2px solid #0ff;
-    border-radius: 15px;
-    background: rgba(0, 255, 255, 0.05);
-    box-shadow: 0 0 25px #0ff;
+  margin: 20px 0;
+  padding: 20px;
+  border: 4px groove #ff00ff;
+  border-radius: 15px;
+  background: linear-gradient(45deg, cyan, magenta, yellow);
+  box-shadow: 0 0 30px #ff00ff, inset 0 0 15px #00ffff;
 }
 
 .fila {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 5px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5px;
 }
 
 /* === CELDAS === */
 .celdaViva, .celdaMuerta {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 25px;
-    height: 25px;
-    border-radius: 6px;
-    margin: 3px;
-    transition: all 0.3s ease;
-    box-shadow: 0 0 5px #0ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  margin: 3px;
+  transition: all 0.2s;
+  box-shadow: 0 0 10px #00ffff inset;
 }
 
 .celdaViva {
-    background: #0ff;
-    box-shadow: 0 0 20px #0ff, 0 0 40px #0f0;
-    animation: pulseGlow 1.5s infinite alternate;
+  background: linear-gradient(45deg, #0ff, #0f0, #ff0);
+  box-shadow: 0 0 25px #0ff, 0 0 50px #0f0;
+  animation: pulseGlow 1.5s infinite alternate, blinkText 1s infinite;
 }
 
 .celdaMuerta {
-    background: rgba(0, 255, 255, 0.1);
-    border: 1px solid rgba(0, 255, 255, 0.3);
+  background: rgba(0, 255, 255, 0.1);
+  border: 2px inset #ff00ff;
 }
 
 /* === BOTONES === */
 #btnPausa, .btnVel {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1rem;
-    padding: 12px 25px;
-    border-radius: 12px;
-    border: 2px solid #0ff;
-    background: rgba(0, 255, 255, 0.1);
-    color: #0ff;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 0 10px #0ff;
-    margin: 5px;
+  font-family: 'Comic Sans MS', cursive;
+  font-size: 1.2rem;
+  padding: 15px 30px;
+  border-radius: 15px;
+  border: 3px outset yellow;
+  background: repeating-linear-gradient(45deg, red, yellow 10%, lime 20%);
+  color: blue;
+  cursor: pointer;
+  box-shadow: 0 0 15px magenta, inset 0 0 10px cyan;
+  transition: all 0.2s;
+  margin: 5px;
 }
 
 #btnPausa:hover, .btnVel:hover {
-    background: #0ff;
-    color: #000;
-    box-shadow: 0 0 25px #0ff, 0 0 50px #0f0;
-    transform: scale(1.05);
+  transform: scale(1.2) rotate(3deg);
+  background: linear-gradient(45deg, lime, pink, cyan);
+  color: white;
+  box-shadow: 0 0 35px #ff00ff, 0 0 50px #ffff00 inset;
 }
 
+/* === CONTENEDOR DE VELOCIDADES === */
 #velocidades {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
 }
+
+/* === PIE DE PÁGINA === */
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: linear-gradient(to right, magenta, cyan, lime);
+  color: yellow;
+  border-top: 5px double #00ff00;
+  padding: 15px 0;
+  text-shadow: 2px 2px 5px black;
+  animation: moveRainbow 6s linear infinite;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: underline wavy red;
+  font-size: 1.5rem;
+  animation: blinkText 0.7s infinite;
+}
+
+/* === SCROLLBAR === */
+::-webkit-scrollbar { width: 16px; }
+::-webkit-scrollbar-thumb {
+  background: repeating-linear-gradient(45deg, red, yellow, lime);
+  border: 3px solid magenta;
+}
+::-webkit-scrollbar-track { background: black; }
 
 /* === ANIMACIONES === */
 @keyframes gradientMove {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 @keyframes pulseGlow {
-    0% { box-shadow: 0 0 10px #0ff, 0 0 20px #0f0; }
-    100% { box-shadow: 0 0 30px #0ff, 0 0 60px #0f0; }
+  0% { box-shadow: 0 0 15px #0ff, 0 0 30px #0f0; }
+  100% { box-shadow: 0 0 40px #0ff, 0 0 60px #0f0; }
 }
 
-/* === SCROLLBAR PERSONALIZADO === */
-::-webkit-scrollbar {
-    width: 8px;
+@keyframes moveRainbow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
 }
-::-webkit-scrollbar-thumb {
-    background: linear-gradient(#0ff, #0f0);
-    border-radius: 10px;
-}
-::-webkit-scrollbar-track {
-    background: #111;
+
+@keyframes flashBg {
+  0% { background-color: black; }
+  50% { background-color: #111; }
+  100% { background-color: #333; }
 }
 
 /* === RESPONSIVE === */
 @media (max-width: 600px) {
-    header h1 {
-        font-size: 1.5rem;
-    }
-    #btnPausa, .btnVel {
-        font-size: 0.9rem;
-        padding: 10px 20px;
-    }
-    .celdaViva, .celdaMuerta {
-        width: 20px;
-        height: 20px;
-    }
+  header h1 { font-size: 2rem; }
+  #btnPausa, .btnVel { font-size: 1rem; padding: 12px 20px; }
+  .celdaViva, .celdaMuerta { width: 20px; height: 20px; }
 }

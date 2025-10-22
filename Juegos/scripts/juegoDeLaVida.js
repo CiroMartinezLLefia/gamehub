@@ -91,7 +91,7 @@ function contarVecinosVivos(x, y, matriz) {
     return vecinosVivos;
 }
 
-let matriz = crearMatriz(20, 40);
+let matriz = crearMatriz(10, 20);
 renderizarMatriz(matriz);
 
 btn1x.addEventListener("click", () => cambiarVelocidad(1000, btn1x));

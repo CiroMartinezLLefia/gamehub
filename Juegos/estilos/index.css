@@ -1,142 +1,154 @@
-/* === RESET Y FUENTES === */
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Roboto:wght@300;400&display=swap');
+/* === ESTILO CUTRE DE LOS 2000 === */
 
+/* FUENTE Y RESETEO */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: url('https://cur.cursors-4u.net/smilies/smi-3/smi231.cur'), auto;
 }
 
-html, body {
-    height: 100%;
-    font-family: 'Roboto', sans-serif;
-    color: #f0f0f0;
-    background: radial-gradient(circle at top, #111 0%, #000 100%);
-    overflow-x: hidden;
+body {
+  background: url('https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExYTZlb3pnNng0bm51czF2OGJja3FmZmxqOWtyYTNhZjgyamFndW51biZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/FlodpfQUBSp20/giphy.gif') repeat;
+  font-family: 'Comic Sans MS', 'Papyrus', cursive;
+  color: #00ff00;
+  text-shadow: 2px 2px 5px #ff00ff;
+  animation: bodyFlash 3s infinite alternate;
 }
 
-/* === HEADER === */
+/* === CABECERA === */
 header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: linear-gradient(90deg, #0ff, #0f0, #00f);
-    background-size: 300% 300%;
-    animation: gradientMove 8s ease infinite;
-    text-align: center;
-    padding: 20px 0;
-    z-index: 1000;
-    box-shadow: 0 0 25px #0ff;
+  background: linear-gradient(45deg, red, yellow, lime, cyan, blue, magenta);
+  background-size: 400% 400%;
+  animation: headerGradient 5s linear infinite;
+  text-align: center;
+  border-bottom: 5px ridge lime;
+  padding: 20px 0;
+  box-shadow: 0 0 25px magenta inset;
 }
 
 header h1 {
-    font-family: 'Orbitron', sans-serif;
-    text-transform: uppercase;
-    font-size: 2rem;
-    color: #000;
-    text-shadow: 0 0 10px #0ff, 0 0 25px #0f0;
+  font-size: 3rem;
+  color: #ffff00;
+  text-shadow: 3px 3px 5px #ff0000, 0 0 20px #00ffff;
+  text-transform: uppercase;
+  animation: blinkText 1s infinite;
 }
 
-/* === FOOTER === */
-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 4rem;
-    background: rgba(0, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    text-align: center;
-    padding: 10px 0;
-    font-size: 0.9rem;
-    border-top: 1px solid rgba(0, 255, 255, 0.5);
-    color: #0ff;
-    transition: 0.2s;
-}
-
-footer a {
-    font-size: 1.5rem;
-    color: #0ff;
-    text-shadow: 0 0 10px #0ff;
-}
-
-footer:hover {
-    height: 4.5rem;
-}
-
-/* === MAIN === */
+/* === CONTENIDO === */
 main {
-    margin-top: 120px;
-    margin-bottom: 80px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 25px;
-    text-align: center;
+  margin: 150px auto 100px;
+  width: 90%;
+  text-align: center;
+  background: rgba(255, 255, 0, 0.2);
+  border: 5px outset fuchsia;
+  padding: 30px;
+  box-shadow: 0 0 25px #00ffff, inset 0 0 10px #ff00ff;
 }
 
 main p {
-    font-size: 1.5rem;
-    color: #0ff;
-    text-shadow: 0 0 10px #0ff;
+  font-size: 1.8rem;
+  color: #ff00ff;
+  text-shadow: 2px 2px 10px yellow;
+  animation: spinText 8s linear infinite;
 }
 
+/* === LISTAS === */
 ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  list-style-type: disc;
+  color: #00ffff;
+  text-align: left;
+  margin: 30px auto;
+  width: fit-content;
+}
+
+ul li {
+  margin: 15px 0;
 }
 
 ul li a {
-    display: inline-block;
-    padding: 15px 40px;
-    background: rgba(0, 255, 255, 0.1);
-    border: 2px solid #0ff;
-    border-radius: 15px;
-    color: #0ff;
-    text-decoration: none;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.2rem;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
-    box-shadow: 0 0 10px #0ff;
+  display: inline-block;
+  padding: 10px 20px;
+  background: linear-gradient(90deg, #ff00ff, #00ffff, #ffff00);
+  border: 3px groove #00ff00;
+  color: #0000ff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  box-shadow: 5px 5px 10px #000;
+  transition: all 0.2s;
 }
 
 ul li a:hover {
-    background: #0ff;
-    color: #000;
-    box-shadow: 0 0 25px #0ff, 0 0 50px #0f0;
-    transform: scale(1.05);
+  background: repeating-linear-gradient(45deg, red, yellow 10%, lime 20%);
+  color: white;
+  text-decoration: blink;
+  transform: scale(1.2) rotate(5deg);
+  box-shadow: 0 0 25px red, 0 0 40px yellow;
 }
 
-/* === ANIMACIONES === */
-@keyframes gradientMove {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+/* === PIE DE PÁGINA === */
+footer {
+  background: linear-gradient(to right, blue, pink, lime);
+  text-align: center;
+  padding: 15px 0;
+  border-top: 5px double #ff00ff;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  color: #ffffff;
+  text-shadow: 1px 1px 5px black;
+  font-size: 1rem;
+}
+
+footer a {
+  color: yellow;
+  font-size: 1.5rem;
+  text-decoration: underline wavy red;
+  animation: blinkText 0.8s infinite;
 }
 
 /* === SCROLLBAR PERSONALIZADO === */
 ::-webkit-scrollbar {
-    width: 8px;
+  width: 16px;
 }
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(#0ff, #0f0);
-    border-radius: 10px;
+  background: repeating-linear-gradient(45deg, red, yellow, lime);
+  border: 3px solid magenta;
 }
 ::-webkit-scrollbar-track {
-    background: #111;
+  background: black;
+}
+
+/* === ANIMACIONES === */
+@keyframes headerGradient {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+@keyframes blinkText {
+  0%, 49%, 100% { opacity: 1; }
+  50%, 99% { opacity: 0; }
+}
+
+@keyframes spinText {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes bodyFlash {
+  0% { background-color: black; }
+  50% { background-color: #111; }
+  100% { background-color: #333; }
 }
 
 /* === RESPONSIVE === */
 @media (max-width: 600px) {
-    header h1 {
-        font-size: 1.5rem;
-    }
-    ul li a {
-        font-size: 1rem;
-        padding: 12px 25px;
-    }
+  header h1 {
+    font-size: 2rem;
+  }
+  ul li a {
+    font-size: 1rem;
+  }
 }

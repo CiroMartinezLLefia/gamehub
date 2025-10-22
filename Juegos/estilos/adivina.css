@@ -1,191 +1,205 @@
-/* === FUENTES Y RESET === */
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Roboto:wght@300;400&display=swap');
+/* === ESTILO CUTRE Y BRILLANTE DE LOS 2000 === */
 
+/* FUENTES Y RESET */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: url('https://cur.cursors-4u.net/smilies/smi-3/smi229.cur'), auto;
 }
 
-html, body {
-    height: 100%;
-    font-family: 'Roboto', sans-serif;
-    background: radial-gradient(circle at top, #111 0%, #000 100%);
-    color: #f0f0f0;
-    overflow-x: hidden;
+body {
+  background: url('https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExYTZlb3pnNng0bm51czF2OGJja3FmZmxqOWtyYTNhZjgyamFndW51biZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/FlodpfQUBSp20/giphy.gif') repeat;
+  font-family: 'Comic Sans MS', 'Papyrus', cursive;
+  color: #00ff00;
+  text-align: center;
+  text-shadow: 2px 2px 6px #ff00ff;
+  animation: flashBg 4s infinite alternate;
 }
 
-/* === HEADER === */
+/* === CABECERA === */
 header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: linear-gradient(90deg, #0ff, #0f0, #00f);
-    background-size: 300% 300%;
-    animation: gradientMove 8s ease infinite;
-    text-align: center;
-    padding: 20px 0;
-    z-index: 1000;
-    box-shadow: 0 0 25px #0ff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(45deg, red, yellow, lime, cyan, blue, magenta);
+  background-size: 600% 600%;
+  animation: moveRainbow 6s linear infinite;
+  padding: 25px 0;
+  border-bottom: 6px groove magenta;
+  box-shadow: 0 0 30px yellow inset;
+  z-index: 1000;
 }
 
 header h1 {
-    font-family: 'Orbitron', sans-serif;
-    text-transform: uppercase;
-    font-size: 2rem;
-    color: #000;
-    text-shadow: 0 0 15px #0ff, 0 0 25px #0f0;
+  font-size: 3rem;
+  color: #ff0;
+  text-shadow: 3px 3px 6px #f00, 0 0 20px #0ff;
+  text-transform: uppercase;
+  animation: blinkText 0.8s infinite;
 }
 
-/* === FOOTER === */
-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(0, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    text-align: center;
-    padding: 10px 0;
-    font-size: 0.9rem;
-    border-top: 1px solid rgba(0, 255, 255, 0.5);
-    color: #0ff;
-}
-
-footer a {
-    font-size: 1.5rem;
-    color: #0ff;
-    text-shadow: 0 0 10px #0ff;
-}
-
-footer:hover {
-    height: 4.5rem;
-}
-
-/* === MAIN === */
+/* === CONTENIDO === */
 main {
-    margin-top: 120px;
-    margin-bottom: 80px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 25px;
+  margin-top: 180px;
+  margin-bottom: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  text-align: center;
+  background: rgba(255, 255, 0, 0.2);
+  border: 5px ridge #ff00ff;
+  box-shadow: 0 0 30px #0ff inset, 0 0 20px #f0f;
+  padding: 30px;
+  width: 90%;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* === TEXTO === */
 p {
-    font-size: 1.4rem;
-    color: #0ff;
-    text-shadow: 0 0 10px #0ff;
+  font-size: 1.6rem;
+  color: #00ffff;
+  text-shadow: 2px 2px 10px #ff00ff;
+  animation: spinText 10s linear infinite;
 }
 
 /* === INPUT === */
 #inputGuess {
-    padding: 12px;
-    font-size: 1.2rem;
-    border: 2px solid #0ff;
-    border-radius: 10px;
-    background: rgba(0, 255, 255, 0.1);
-    color: #0ff;
-    text-align: center;
-    outline: none;
-    transition: all 0.3s ease;
-    box-shadow: 0 0 10px #0ff;
+  padding: 12px;
+  font-size: 1.4rem;
+  border: 4px inset #ff00ff;
+  border-radius: 15px;
+  background: linear-gradient(90deg, yellow, lime);
+  color: blue;
+  text-align: center;
+  box-shadow: 0 0 15px #00ffff, 0 0 10px #ff00ff inset;
+  outline: none;
+  transition: all 0.2s;
 }
 
 #inputGuess:focus {
-    background: rgba(0, 255, 255, 0.2);
-    box-shadow: 0 0 25px #0ff;
+  background: linear-gradient(90deg, cyan, pink, lime);
+  color: black;
+  box-shadow: 0 0 25px magenta;
 }
 
 /* === BOTÓN === */
 #btnComprobar {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.3rem;
-    padding: 15px 35px;
-    border-radius: 15px;
-    border: 2px solid #0ff;
-    background: rgba(0, 255, 255, 0.1);
-    color: #0ff;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 0 10px #0ff;
+  font-family: 'Comic Sans MS', cursive;
+  font-size: 1.5rem;
+  padding: 15px 40px;
+  border-radius: 20px;
+  border: 4px outset yellow;
+  background: repeating-linear-gradient(45deg, red, yellow 10%, lime 20%);
+  color: #0000ff;
+  cursor: pointer;
+  text-transform: uppercase;
+  box-shadow: 0 0 15px magenta, inset 0 0 10px #00ff00;
+  transition: all 0.2s;
 }
 
 #btnComprobar:hover {
-    background: #0ff;
-    color: #000;
-    box-shadow: 0 0 25px #0ff, 0 0 50px #0f0;
-    transform: scale(1.05);
+  background: linear-gradient(45deg, lime, yellow, red);
+  color: white;
+  text-shadow: 0 0 10px black;
+  transform: scale(1.2) rotate(3deg);
+  box-shadow: 0 0 25px #ff00ff, 0 0 40px #ffff00;
 }
 
 /* === MENSAJES Y SECCIONES === */
 #mensajes, #intentos, #racha {
-    font-size: 1.2rem;
-    margin-top: 10px;
-    text-shadow: 0 0 10px #0ff;
+  font-size: 1.3rem;
+  color: #ffff00;
+  text-shadow: 1px 1px 8px #f00, 0 0 10px #0ff;
+  animation: blinkText 1s infinite;
 }
 
 #historial {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
 }
 
 #historial span {
-    background: rgba(0, 255, 255, 0.1);
-    border: 1px solid #0ff;
-    padding: 8px 12px;
-    border-radius: 10px;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1rem;
-    box-shadow: 0 0 10px #0ff;
+  background: linear-gradient(45deg, #ff00ff, #00ffff, #ffff00);
+  border: 3px groove #00ff00;
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-size: 1rem;
+  box-shadow: 2px 2px 8px black;
 }
 
 /* === COLORES DE RESULTADO === */
 .verde {
-    color: #0f0;
-    text-shadow: 0 0 10px #0f0, 0 0 25px #0f0;
+  color: #00ff00;
+  text-shadow: 0 0 10px #00ff00, 0 0 30px #ffff00;
 }
 
 .rojo {
-    color: #f00;
-    text-shadow: 0 0 10px #f00, 0 0 25px #f00;
+  color: #ff0000;
+  text-shadow: 0 0 10px #ff0000, 0 0 30px #ff00ff;
+}
+
+/* === PIE DE PÁGINA === */
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: linear-gradient(to right, magenta, cyan, lime);
+  color: yellow;
+  border-top: 5px double #00ff00;
+  padding: 15px 0;
+  text-shadow: 2px 2px 5px black;
+  animation: moveRainbow 6s linear infinite;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: underline wavy red;
+  font-size: 1.4rem;
+  animation: blinkText 0.7s infinite;
+}
+
+/* === SCROLLBAR === */
+::-webkit-scrollbar {
+  width: 16px;
+}
+::-webkit-scrollbar-thumb {
+  background: repeating-linear-gradient(45deg, red, yellow, lime);
+  border: 3px solid magenta;
+}
+::-webkit-scrollbar-track {
+  background: black;
 }
 
 /* === ANIMACIONES === */
-@keyframes gradientMove {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+
+@keyframes moveRainbow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
 }
 
-/* === SCROLLBAR PERSONALIZADO === */
-::-webkit-scrollbar {
-    width: 8px;
-}
-::-webkit-scrollbar-thumb {
-    background: linear-gradient(#0ff, #0f0);
-    border-radius: 10px;
-}
-::-webkit-scrollbar-track {
-    background: #111;
+@keyframes flashBg {
+  0% { background-color: black; }
+  50% { background-color: #111; }
+  100% { background-color: #333; }
 }
 
 /* === RESPONSIVE === */
 @media (max-width: 600px) {
-    header h1 {
-        font-size: 1.5rem;
-    }
-    #btnComprobar {
-        font-size: 1.1rem;
-        padding: 12px 25px;
-    }
-    p {
-        font-size: 1.2rem;
-    }
+  header h1 {
+    font-size: 2rem;
+  }
+  #btnComprobar {
+    font-size: 1.2rem;
+  }
+  p {
+    font-size: 1.3rem;
+  }
 }
