@@ -19,25 +19,21 @@ body {
 
 /* === CABECERA === */
 header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
   background: linear-gradient(45deg, red, yellow, lime, cyan, blue, magenta);
-  background-size: 600% 600%;
-  animation: moveRainbow 6s linear infinite;
-  padding: 25px 0;
-  border-bottom: 6px groove magenta;
-  box-shadow: 0 0 30px yellow inset;
-  z-index: 1000;
+  background-size: 400% 400%;
+  animation: headerGradient 5s linear infinite;
+  text-align: center;
+  border-bottom: 5px ridge lime;
+  padding: 20px 0;
+  box-shadow: 0 0 25px magenta inset;
 }
 
 header h1 {
   font-size: 3rem;
-  color: #ff0;
-  text-shadow: 3px 3px 6px #f00, 0 0 20px #0ff;
+  color: #ffff00;
+  text-shadow: 3px 3px 5px #ff0000, 0 0 20px #00ffff;
   text-transform: uppercase;
-  animation: blinkText 0.8s infinite;
+  animation: blinkText 1s infinite;
 }
 
 /* === MAIN === */
@@ -130,31 +126,36 @@ main {
 
 /* === PIE DE PÁGINA === */
 footer {
+  background: linear-gradient(to right, blue, pink, lime);
+  text-align: center;
+  padding: 15px 0;
+  border-top: 5px double #ff00ff;
   position: fixed;
   bottom: 0;
   width: 100%;
-  background: linear-gradient(to right, magenta, cyan, lime);
-  color: yellow;
-  border-top: 5px double #00ff00;
-  padding: 15px 0;
-  text-shadow: 2px 2px 5px black;
-  animation: moveRainbow 6s linear infinite;
+  color: #ffffff;
+  text-shadow: 1px 1px 5px black;
+  font-size: 1rem;
 }
 
 footer a {
-  color: #fff;
+  color: yellow;
+  font-size: 1.5rem;
   text-decoration: underline wavy red;
-  font-size: 1.4rem;
-  animation: blinkText 0.7s infinite;
+  animation: blinkText 0.8s infinite;
 }
 
-/* === SCROLLBAR === */
-::-webkit-scrollbar { width: 16px; }
+/* === SCROLLBAR PERSONALIZADO === */
+::-webkit-scrollbar {
+  width: 16px;
+}
 ::-webkit-scrollbar-thumb {
   background: repeating-linear-gradient(45deg, red, yellow, lime);
   border: 3px solid magenta;
 }
-::-webkit-scrollbar-track { background: black; }
+::-webkit-scrollbar-track {
+  background: black;
+}
 
 /* === ANIMACIONES === */
 @keyframes moveRainbow {
