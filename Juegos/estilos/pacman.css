@@ -1,35 +1,103 @@
-body {
+/* === FUENTES Y RESET === */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Roboto:wght@300;400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    background: radial-gradient(circle at top, #111 0%, #000 100%);
+    color: #f0f0f0;
+    overflow-x: hidden;
+}
+
+/* === HEADER === */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(90deg, #0ff, #0f0, #00f);
+    background-size: 300% 300%;
+    animation: gradientMove 8s ease infinite;
+    text-align: center;
+    padding: 20px 0;
+    z-index: 1000;
+    box-shadow: 0 0 25px #0ff;
+}
+
+header h1 {
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    font-size: 2rem;
+    color: #000;
+    text-shadow: 0 0 15px #0ff, 0 0 25px #0f0;
+}
+
+/* === FOOTER === */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(0, 255, 255, 0.5);
+    color: #0ff;
+}
+
+footer a {
+    font-size: 1.5rem;
+    color: #0ff;
+    text-shadow: 0 0 10px #0ff;
+}
+
+footer:hover {
+    height: 4.5rem;
+}
+
+/* === MAIN === */
+main {
+    margin-top: 120px;
+    margin-bottom: 80px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
-    min-height: 100vh;
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
-    padding: 20px;
     text-align: center;
+    gap: 20px;
 }
 
-h1 {
-    margin-bottom: 20px;
-}
-
+/* === INFORMACIÓN DEL JUEGO === */
 #level, #puntos, #timer {
-    margin: 5px 0;
+    font-family: 'Orbitron', sans-serif;
     font-size: 1.2rem;
-    font-weight: 600;
+    color: #0ff;
+    text-shadow: 0 0 10px #0ff;
 }
 
+/* === TABLERO (MATRIZ) === */
 #matriz {
-    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px 0;
+    padding: 20px;
+    border: 2px solid #0ff;
+    border-radius: 15px;
+    background: rgba(0, 255, 255, 0.05);
+    box-shadow: 0 0 25px #0ff;
 }
 
 .fila {
     display: flex;
     justify-content: center;
-    margin-bottom: 5px;
 }
 
 .celda {
@@ -38,19 +106,35 @@ h1 {
     align-items: center;
     width: 50px;
     height: 50px;
-    border: 2px solid #ccc;
-    background-color: #fff;
-    margin-right: 5px;
+    border: 1px solid rgba(0, 255, 255, 0.5);
+    margin: 3px;
     font-size: 1.5rem;
     font-weight: bold;
-    border-radius: 6px;
-    transition: background-color 0.2s;
+    border-radius: 10px;
+    color: #0ff;
+    background: rgba(0, 255, 255, 0.08);
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
 }
 
+.celda:hover {
+    background: rgba(0, 255, 255, 0.2);
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #0ff;
+}
+
+/* === ENTIDADES DEL JUEGO === */
 .entidad {
-    color: darkgoldenrod;
+    color: gold;
+    text-shadow: 0 0 15px gold, 0 0 25px orange;
 }
 
+.★ {
+    color: #f00;
+    text-shadow: 0 0 15px red, 0 0 30px #f00;
+}
+
+/* === ANIMACIONES DIRECCIONALES === */
 .⍩⃝up {
     transform: rotate(90deg);
 }
@@ -64,6 +148,36 @@ h1 {
     transform: scaleX(-1);
 }
 
-.★ {
-    color: red;
+/* === ANIMACIÓN FONDO === */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* === SCROLLBAR === */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(#0ff, #0f0);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #111;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+    .celda {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+    #level, #puntos, #timer {
+        font-size: 1rem;
+    }
 }

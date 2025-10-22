@@ -3,24 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juego</title>
+    <title>Juego - Adivina el Número</title>
     <link rel="stylesheet" href="estilos/adivina.css">
 </head>
-    <body>
-        <h1>Juego de adivinar</h1>
+<body>
+    <header>
+        <h1>Adivina el Número</h1>
+    </header>
+
+    <main>
         <p>Elige un número del 1 al 20</p>
-        <input type="number" id="inputGuess">
-
+        <input type="number" id="inputGuess" min="1" max="20">
         <button id="btnComprobar">Comprobar</button>
-        
+
         <div id="mensajes"></div>
-
         <div id="intentos"></div>
-
         <div id="historial"></div>
-        
         <div id="racha"></div>
-        
-        <script src="scripts/adivinaElNumero.js"></script>
-    </body>
+    </main>
+
+    <footer>
+        <p>Hecho por Ciro Martinez</p>
+    </footer>
+
+    <script src="scripts/adivinaElNumero.js"></script>
+</body>
 </html>
