@@ -1,0 +1,142 @@
+/* === RESET Y FUENTES === */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Roboto:wght@300;400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    color: #f0f0f0;
+    background: radial-gradient(circle at top, #111 0%, #000 100%);
+    overflow-x: hidden;
+}
+
+/* === HEADER === */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(90deg, #0ff, #0f0, #00f);
+    background-size: 300% 300%;
+    animation: gradientMove 8s ease infinite;
+    text-align: center;
+    padding: 20px 0;
+    z-index: 1000;
+    box-shadow: 0 0 25px #0ff;
+}
+
+header h1 {
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    font-size: 2rem;
+    color: #000;
+    text-shadow: 0 0 10px #0ff, 0 0 25px #0f0;
+}
+
+/* === FOOTER === */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4rem;
+    background: rgba(0, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(0, 255, 255, 0.5);
+    color: #0ff;
+    transition: 0.2s;
+}
+
+footer a {
+    font-size: 1.5rem;
+    color: #0ff;
+    text-shadow: 0 0 10px #0ff;
+}
+
+footer:hover {
+    height: 4.5rem;
+}
+
+/* === MAIN === */
+main {
+    margin-top: 120px;
+    margin-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    text-align: center;
+}
+
+main p {
+    font-size: 1.5rem;
+    color: #0ff;
+    text-shadow: 0 0 10px #0ff;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+ul li a {
+    display: inline-block;
+    padding: 15px 40px;
+    background: rgba(0, 255, 255, 0.1);
+    border: 2px solid #0ff;
+    border-radius: 15px;
+    color: #0ff;
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px #0ff;
+}
+
+ul li a:hover {
+    background: #0ff;
+    color: #000;
+    box-shadow: 0 0 25px #0ff, 0 0 50px #0f0;
+    transform: scale(1.05);
+}
+
+/* === ANIMACIONES === */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* === SCROLLBAR PERSONALIZADO === */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(#0ff, #0f0);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #111;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+    ul li a {
+        font-size: 1rem;
+        padding: 12px 25px;
+    }
+}
