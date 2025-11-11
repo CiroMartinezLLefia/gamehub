@@ -91,7 +91,7 @@ ul li a:hover {
 footer {
   background: linear-gradient(to right, blue, pink, lime);
   text-align: center;
-  padding: 15px 0;
+  padding: 0 0;
   border-top: 5px double #ff00ff;
   position: fixed;
   bottom: 0;

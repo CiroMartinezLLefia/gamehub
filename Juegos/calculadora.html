@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto 1</title>
+    <style>
+        h1
+        {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Primer Dia</h1>
+
+    <input type="number" id = "numero1">
+    <input type="number" id = "numero2">
+    <button id = "sumaButton">Sumar</button>
+    <div class="suma"></div>
+
+    <br>
+    <br>
+    
+    <input type="number" id = "mult">
+    <button id = "multButton">Multiplicar</button>
+
+    <div class="multiplicar"></div>
+
+    <script>
+        /*SUMAR*/
+        const btnSumar = document.querySelector("#sumaButton");
+        const divResultado = document.querySelector(".suma");
+        const num1 = document.querySelector("#numero1");
+        const num2 = document.querySelector("#numero2");
+
+        btnSumar.addEventListener("click", sumar);        
+
+        function sumar()
+        {
+            console.log("SUMANDO");
+            console.log(num1.value);
+            console.log(num2.value);
+
+            num1.value = parseInt(num1.value) + parseInt(num2.value)
+
+            console.log(num1.value);
+            divResultado.innerHTML = `<p>resultado: ${num1.value}</p>`;
+
+            num1.value = null;
+            num2.value = null;
+
+        }
+
+        /*MULTIPLICAR*/
+        const divTabla = document.querySelector(".multiplicar");
+        const btnMult = document.querySelector("#multButton");
+        const multNum = document.querySelector("#mult");
+        let temp;
+
+        btnMult.addEventListener("click", mult); 
+        function mult()
+        {
+            if (multNum.value > 10)
+            {
+                divTabla.innerHTML = `<p>EL NUMERO NO PUEDE SER MAYOR QUE 10</p>`;
+                console.log("EL NUMERO NO PUEDE SER MAYOR QUE 10");
+            }
+            else if (multNum.value <= 0)
+            {
+                divTabla.innerHTML = `<p>EL NUMERO NO PUEDE SER NEGATIVO/NULO</p>`;
+                console.log("EL NUMERO NO PUEDE SER NEGATIVO/NULO");
+            }
+            else
+            {
+                divTabla.innerHTML = `<p> Tabla de multiplicar de ${parseInt(multNum.value)}:</p>`;
+                console.log("MULTIPLICANDO");
+                for (let i = 1; i < 11; i++) {
+                    temp = parseInt(multNum.value);
+                    temp *= i;
+                    divTabla.innerHTML += `<p>${multNum.value} x ${i} = ${temp}</p>`;
+                    console.log(temp);
+                }
+                multNum.value = null;
+            }
+        }  
+    </script>
+</body>
+</html>

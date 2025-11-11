@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto 2</title>
+    <style>
+        h1
+        {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Segundo Dia</h1>
+
+    <div id = "btn"></div>
+    <div id = "resultado"></div>
+
+    <script>
+        let turnoA = true;
+
+        const boton = document.querySelector("#btn");
+        const btnA = `<button>Jugador A</button>`;
+        const btnB = `<button>Jugador B</button>`;
+
+        const resultadoText = document.querySelector("#resultado");
+        let tirada = 0;
+
+        boton.innerHTML = turnoA ? btnA : btnB;
+
+        boton.addEventListener("click", tirarDado)
+        function tirarDado()
+        {
+            tirada = 3;
+            boton.innerHTML = turnoA ? turnoA = false : turnoA = true;
+            boton.innerHTML = turnoA ? btnA : btnB;
+            resultadoText.innerHTML = turnoA ? `Jugador A ha tirado:  ${tirada}` : `Jugador B ha tirado:  ${tirada}`;
+        }
+    </script>
+</body>
+</html>
