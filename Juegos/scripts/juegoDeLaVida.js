@@ -91,7 +91,7 @@ function contarVecinosVivos(x, y, matriz) {
     return vecinosVivos;
 }
 
-let matriz = crearMatriz(20, 40);
+let matriz = crearMatriz(6, 20);
 renderizarMatriz(matriz);
 
 btn1x.addEventListener("click", () => cambiarVelocidad(1000, btn1x));
@@ -121,7 +121,38 @@ function cambiarVelocidad(vel, boton) {
     btnPrevious = boton;
 }
 
-matrizDiv.addEventListener("click", revivirCelda);
+let isMouseDown = false;
+let paintState = null; // "Viva" o "Muerta"
+
+// Evitar comportamiento de arrastre del navegador
+matrizDiv.addEventListener("dragstart", (e) => e.preventDefault());
+
+matrizDiv.addEventListener("mousedown", (event) => {
+    if (!pause) return;
+
+    if (event.target.classList.contains("celdaViva")) {
+        paintState = "Muerta";
+        event.target.className = "celdaMuerta";
+        isMouseDown = true;
+    } else if (event.target.classList.contains("celdaMuerta")) {
+        paintState = "Viva";
+        event.target.className = "celdaViva";
+        isMouseDown = true;
+    }
+});
+
+matrizDiv.addEventListener("mouseup", () => {
+    isMouseDown = false;
+    paintState = null;
+});
+
+matrizDiv.addEventListener("mouseover", (event) => {
+    if (!pause || !isMouseDown || !paintState) return;
+
+    if (event.target.classList.contains("celda" + (paintState === "Viva" ? "Muerta" : "Viva"))) {
+        event.target.className = "celda" + paintState;
+    }
+});
 
 function revivirCelda(event, x, y) {
     if (event.target.classList.contains("celdaMuerta") && pause) {
@@ -131,3 +162,4 @@ function revivirCelda(event, x, y) {
         event.target.className = "celdaMuerta";
     }
 }
+

@@ -1,183 +1,175 @@
-/* === FUENTES Y RESET === */
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Roboto:wght@300;400&display=swap');
-
+/* FUENTES Y RESET */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: url('https://cur.cursors-4u.net/smilies/smi-3/smi229.cur'), auto;
 }
 
-html, body {
-    height: 100%;
-    font-family: 'Roboto', sans-serif;
-    background: radial-gradient(circle at top, #111 0%, #000 100%);
-    color: #f0f0f0;
-    overflow-x: hidden;
+body {
+  font-family: 'Comic Sans MS', 'Papyrus', cursive;
+  background: url('https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExYTZlb3pnNng0bm51czF2OGJja3FmZmxqOWtyYTNhZjgyamFndW51biZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/FlodpfQUBSp20/giphy.gif') repeat;
+  color: #00ff00;
+  text-shadow: 2px 2px 6px #ff00ff;
+  animation: flashBg 4s infinite alternate;
+  overflow-x: hidden;
 }
 
-/* === HEADER === */
+/* === CABECERA === */
 header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: linear-gradient(90deg, #0ff, #0f0, #00f);
-    background-size: 300% 300%;
-    animation: gradientMove 8s ease infinite;
-    text-align: center;
-    padding: 20px 0;
-    z-index: 1000;
-    box-shadow: 0 0 25px #0ff;
+  background: linear-gradient(45deg, red, yellow, lime, cyan, blue, magenta);
+  background-size: 400% 400%;
+  animation: headerGradient 5s linear infinite;
+  text-align: center;
+  border-bottom: 5px ridge lime;
+  padding: 20px 0;
+  box-shadow: 0 0 25px magenta inset;
 }
 
 header h1 {
-    font-family: 'Orbitron', sans-serif;
-    text-transform: uppercase;
-    font-size: 2rem;
-    color: #000;
-    text-shadow: 0 0 15px #0ff, 0 0 25px #0f0;
-}
-
-/* === FOOTER === */
-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(0, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    text-align: center;
-    padding: 10px 0;
-    font-size: 0.9rem;
-    border-top: 1px solid rgba(0, 255, 255, 0.5);
-    color: #0ff;
-}
-
-footer a {
-    font-size: 1.5rem;
-    color: #0ff;
-    text-shadow: 0 0 10px #0ff;
-}
-
-footer:hover {
-    height: 4.5rem;
+  font-size: 3rem;
+  color: #ffff00;
+  text-shadow: 3px 3px 5px #ff0000, 0 0 20px #00ffff;
+  text-transform: uppercase;
+  animation: blinkText 1s infinite;
 }
 
 /* === MAIN === */
 main {
-    margin-top: 120px;
-    margin-bottom: 80px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 20px;
+  margin-top: 180px;
+  margin-bottom: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+  background: rgba(255, 255, 0, 0.2);
+  border: 5px ridge #ff00ff;
+  box-shadow: 0 0 30px #0ff inset, 0 0 20px #f0f;
+  padding: 30px;
+  width: 90%;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* === INFORMACIÓN DEL JUEGO === */
+/* === INFO DEL JUEGO === */
 #level, #puntos, #timer {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.2rem;
-    color: #0ff;
-    text-shadow: 0 0 10px #0ff;
+  font-family: 'Comic Sans MS', cursive;
+  font-size: 1.4rem;
+  color: yellow;
+  text-shadow: 1px 1px 8px red, 0 0 10px cyan;
+  animation: blinkText 1.2s infinite;
 }
 
 /* === TABLERO (MATRIZ) === */
 #matriz {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 30px 0;
-    padding: 20px;
-    border: 2px solid #0ff;
-    border-radius: 15px;
-    background: rgba(0, 255, 255, 0.05);
-    box-shadow: 0 0 25px #0ff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px 0;
+  padding: 20px;
+  border: 4px groove #ff00ff;
+  border-radius: 15px;
+  background: linear-gradient(45deg, cyan, magenta, yellow);
+  box-shadow: 0 0 25px #ff00ff, inset 0 0 15px #00ffff;
 }
 
 .fila {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .celda {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50px;
-    height: 50px;
-    border: 1px solid rgba(0, 255, 255, 0.5);
-    margin: 3px;
-    font-size: 1.5rem;
-    font-weight: bold;
-    border-radius: 10px;
-    color: #0ff;
-    background: rgba(0, 255, 255, 0.08);
-    transition: all 0.3s ease;
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 55px;
+  height: 55px;
+  margin: 3px;
+  font-size: 1.6rem;
+  font-weight: bold;
+  border-radius: 10px;
+  color: #00ffff;
+  background: linear-gradient(45deg, #ff00ff, #00ffff, #ffff00);
+  border: 2px outset #ff00ff;
+  box-shadow: 0 0 15px #0ff inset;
+  transition: all 0.2s;
 }
 
 .celda:hover {
-    background: rgba(0, 255, 255, 0.2);
-    transform: scale(1.05);
-    box-shadow: 0 0 20px #0ff;
+  transform: scale(1.1) rotate(2deg);
+  box-shadow: 0 0 30px yellow, 0 0 25px magenta inset;
+  background: linear-gradient(45deg, lime, pink, cyan);
 }
 
 /* === ENTIDADES DEL JUEGO === */
 .entidad {
-    color: gold;
-    text-shadow: 0 0 15px gold, 0 0 25px orange;
+  color: rgb(255, 0, 191);
+  text-shadow: 0 0 15px gold, 0 0 25px orange;
+  animation: blinkText 1s infinite;
 }
 
 .★ {
-    color: #f00;
-    text-shadow: 0 0 15px red, 0 0 30px #f00;
+  color: red;
+  text-shadow: 0 0 15px red, 0 0 30px orange;
+  animation: blinkText 0.7s infinite;
 }
 
 /* === ANIMACIONES DIRECCIONALES === */
-.⍩⃝up {
-    transform: rotate(90deg);
-}
-.⍩⃝down {
-    transform: rotate(270deg);
-}
-.⍩⃝left {
-    transform: rotate(0deg);
-}
-.⍩⃝right {
-    transform: scaleX(-1);
+.⍩⃝up { transform: rotate(90deg); }
+.⍩⃝down { transform: rotate(270deg); }
+.⍩⃝left { transform: rotate(0deg); }
+.⍩⃝right { transform: scaleX(-1); }
+
+/* === PIE DE PÁGINA === */
+footer {
+  background: linear-gradient(to right, blue, pink, lime);
+  text-align: center;
+  padding: 15px 0;
+  border-top: 5px double #ff00ff;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  color: #ffffff;
+  text-shadow: 1px 1px 5px black;
+  font-size: 1rem;
 }
 
-/* === ANIMACIÓN FONDO === */
-@keyframes gradientMove {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+footer a {
+  color: yellow;
+  font-size: 1.5rem;
+  text-decoration: underline wavy red;
+  animation: blinkText 0.8s infinite;
 }
 
-/* === SCROLLBAR === */
+/* === SCROLLBAR PERSONALIZADO === */
 ::-webkit-scrollbar {
-    width: 8px;
+  width: 16px;
 }
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(#0ff, #0f0);
-    border-radius: 10px;
+  background: repeating-linear-gradient(45deg, red, yellow, lime);
+  border: 3px solid magenta;
 }
 ::-webkit-scrollbar-track {
-    background: #111;
+  background: black;
+}
+
+/* === ANIMACIONES === */
+@keyframes moveRainbow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+@keyframes flashBg {
+  0% { background-color: black; }
+  50% { background-color: #111; }
+  100% { background-color: #333; }
 }
 
 /* === RESPONSIVE === */
 @media (max-width: 600px) {
-    header h1 {
-        font-size: 1.5rem;
-    }
-    .celda {
-        width: 35px;
-        height: 35px;
-        font-size: 1rem;
-    }
-    #level, #puntos, #timer {
-        font-size: 1rem;
-    }
+  header h1 { font-size: 2rem; }
+  .celda { width: 35px; height: 35px; font-size: 1rem; }
+  #level, #puntos, #timer { font-size: 1.1rem; }
 }

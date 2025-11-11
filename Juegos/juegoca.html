@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de la Oca</title>
+    <link rel="stylesheet" href="estilos/juegoca.css">
+</head>
+<body>
+    <header>
+        <h1>Juego de la Oca</h1>
+        <h2 class="turnoText">Turno del Jugador 1</h2>
+    </header>
+    <main>
+        <div class="tablero">
+            <div class="ficha" id="fichaJ1"><img src="imagenes/fichas/ficha1.png" alt=""></div>
+            <div class="ficha" id="fichaJ2"><img src="imagenes/fichas/ficha2.png" alt=""></div>
+        </div>
+
+        <div class="jugador" id="jugador1">
+            <div class="dadoJ1">
+                <button class="boton" id="btnDadoJ1">Jugador 1</button>
+                <div class="dado" id="imgDadoJ1"><img src="imagenes/dado1/dado1.png" alt="dado"></div>
+            </div>
+        </div>
+
+        <div class="jugador" id="jugador2">
+            <div class="dadoJ2">
+                <button class="boton" id="btnDadoJ2" disabled>Jugador 2</button>
+                <div class="dado" id="imgDadoJ2"><img src="imagenes/dado1/dado1.png" alt="dado"></div>
+            </div>
+        </div>
+
+    </main>
+    <footer>
+        <p>2High2Work Productions © 2025</p>
+    </footer>
+    <script src="scripts/juegoca.js"></script>
+</body>
+</html>
