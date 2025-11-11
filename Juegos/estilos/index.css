@@ -200,3 +200,44 @@ footer a {
   85% { color: magenta; }
   100% { color: red; }
 }
+
+/* === SPIN TRIGGER (CUADRADO PEQUEÑO) === */
+#spin-trigger {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(45deg, magenta, cyan);
+  border: 3px solid yellow;
+  z-index: 100000;        /* más alto para asegurar visibilidad */
+  cursor: pointer;
+  box-shadow: 0 0 10px #ff00ff;
+  transition: transform 0.15s ease;
+  border-radius: 4px;
+  will-change: transform; /* optimización para animaciones */
+  transform: translateZ(0); /* fuerza una capa propia, evita reflow */
+}
+
+/* efecto visual al pasar el ratón por el cuadrado */
+#spin-trigger:hover {
+  transform: scale(1.15) rotate(22deg);
+}
+
+/* antiguo selector que aplicaba la animación sólo en hover -> lo reemplazamos por una clase */
+#spin-trigger:hover ~ #site {
+  animation: spinText 8s linear infinite;
+}
+
+/* cambiado: aplicación mediante clase .spinning controlable desde JS */
+.spinning {
+  animation: spinText 8s linear infinite;
+  transform-origin: 50% 50%;
+  overflow: hidden;
+}
+
+/* Evita que la aparición de la barra vertical cambie el layout */
+html {
+  height: 100%;
+  overflow-y: scroll; /* mantiene la barra siempre presente, evita salto al rotar */
+}
